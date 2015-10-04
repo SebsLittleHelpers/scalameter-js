@@ -7,6 +7,8 @@ normalizedName := "scalajs-scalameter"
 
 scalaVersion := "2.11.7"
 
+version := "0.0.1-SNAPSHOT"
+
 scalacOptions ++= Seq("-deprecation", "-feature", "-Xfatal-warnings")
 
 licenses += ("MIT", url("http://opensource.org/licenses/mit-license.php"))
