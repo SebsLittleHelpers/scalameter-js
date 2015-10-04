@@ -1,13 +1,14 @@
-lazy val root = project.in(file(".")).
-  enablePlugins(ScalaJSPlugin)
+enablePlugins(ScalaJSPlugin)
 
-name := "Scala.js Scalameter"
+name := "Test"
 
 normalizedName := "scalajs-scalameter"
 
 scalaVersion := "2.11.7"
 
 version := "0.0.1-SNAPSHOT"
+
+persistLauncher in Compile := true
 
 scalacOptions ++= Seq("-deprecation", "-feature", "-Xfatal-warnings")
 
