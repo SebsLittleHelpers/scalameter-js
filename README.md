@@ -9,3 +9,5 @@
                                                           |_|                  
 
 ```
+
+Currently this naive implementations only gather running time on chrome browser launched with the `--enable-benchmarking`
