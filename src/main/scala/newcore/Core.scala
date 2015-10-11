@@ -1,3 +1,4 @@
+package newcore
 
 import scala.scalajs.js
 import js.annotation.JSName

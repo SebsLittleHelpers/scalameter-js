@@ -1,3 +1,5 @@
+package newcore
+
 import scala.scalajs.js
 import js.annotation.JSName
 
@@ -8,4 +10,4 @@ class Timer extends js.Object {
   def stop: js.Function0[js.Any] = js.native
   def milliseconds(): Double = js.native
   def microseconds(): Double = js.native
-}   
+}

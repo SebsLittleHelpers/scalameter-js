@@ -1,3 +1,5 @@
+package newcore
+
 import scala.scalajs.js
 import org.scalajs.dom
 import benchmarkjs._
