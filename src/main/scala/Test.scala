@@ -1,6 +1,6 @@
 import scala.scalajs.js
 import org.scalajs.dom
-import benchmarkJS._
+import benchmarkjs._
 
 object Test extends js.JSApp with ScalaMeter {
 

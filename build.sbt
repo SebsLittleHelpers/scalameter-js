@@ -1,6 +1,6 @@
 enablePlugins(ScalaJSPlugin)
 
-name := "Test"
+name := "scalajs-scalameter"
 
 normalizedName := "scalajs-scalameter"
 

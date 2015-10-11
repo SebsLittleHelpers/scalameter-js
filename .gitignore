@@ -5,3 +5,5 @@ target/
 .settings/
 .idea
 .idea_modules
+/bin/
+.cache-main
