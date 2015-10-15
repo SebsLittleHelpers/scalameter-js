@@ -56,11 +56,11 @@ object Bench {
 
     def aggregator: Aggregator[U]
 
-    def executor: Executor[U] = new execution.SeparateJvmsExecutor(
+    def executor: Executor[U] = Executor.None /* TODO : new execution.SeparateJvmsExecutor(
       warmer,
       aggregator,
       measurer
-    )
+    )*/
 
     def persistor: Persistor = Persistor.None
 
@@ -75,11 +75,11 @@ object Bench {
 
     def aggregator: Aggregator[U]
 
-    def executor: Executor[U] = new execution.SeparateJvmsExecutor[U](
+    def executor: Executor[U] = Executor.None /* TODO :  new execution.SeparateJvmsExecutor[U](
       warmer,
       aggregator,
       measurer
-    )
+    )*/
 
     def persistor: Persistor = Persistor.None // TODO : new persistence.GZIPJSONSerializationPersistor
   }
@@ -181,8 +181,8 @@ object Bench {
       with Measurer.RelativeNoise {
       def numeric: Numeric[Double] = implicitly[Numeric[Double]]
     }
-    def executor: Executor[Double] =
-      new execution.SeparateJvmsExecutor(warmer, aggregator, measurer)
+    def executor: Executor[Double] = Executor.None
+      // TODO : new execution.SeparateJvmsExecutor(warmer, aggregator, measurer)
     def reporter: Reporter[Double] = Reporter.Composite(
       new RegressionReporter(
         RegressionReporter.Tester.OverlapIntervals(),

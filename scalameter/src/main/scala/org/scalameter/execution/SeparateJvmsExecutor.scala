@@ -1,7 +1,7 @@
 package org.scalameter
 package execution
 
-
+/*
 
 import org.scalameter.picklers.Pickler
 import scala.collection._
@@ -133,7 +133,7 @@ object SeparateJvmsExecutor extends Executor.Factory[SeparateJvmsExecutor] {
 
 }
 
-
+*/
 
 
 

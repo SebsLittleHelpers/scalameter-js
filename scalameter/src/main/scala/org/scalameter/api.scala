@@ -47,7 +47,7 @@ object api extends Keys {
   /* execution */
 
   val LocalExecutor = execution.LocalExecutor
-  val SeparateJvmsExecutor = execution.SeparateJvmsExecutor
+  // TODO : val SeparateJvmsExecutor = execution.SeparateJvmsExecutor
 
   val Aggregator = org.scalameter.Aggregator
   val Warmer = org.scalameter.Warmer
@@ -71,8 +71,8 @@ object api extends Keys {
   type RegressionReporter[T] = reporting.RegressionReporter[T]
   val RegressionReporter = reporting.RegressionReporter
 
-  type DsvReporter[T] = reporting.DsvReporter[T]
-  val DsvReporter = reporting.DsvReporter
+  // TODO : type DsvReporter[T] = reporting.DsvReporter[T]
+  // TODO : val DsvReporter = reporting.DsvReporter
 
   val Tester = reporting.RegressionReporter.Tester
   val Historian = reporting.RegressionReporter.Historian

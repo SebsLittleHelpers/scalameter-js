@@ -53,15 +53,19 @@ object ScalaMeterJsBuild extends Build {
     "scalameter-core",
     file("scalameter-core"),
     settings = scalaMeterCoreSettings 
+  ) enablePlugins (
+    ScalaJSPlugin
   )
 
   lazy val scalaMeter = Project(
     "scalameter",
     file("scalameter"),
     settings = scalaMeterSettings 
+  ) enablePlugins (
+    ScalaJSPlugin
   ) dependsOn (
     scalaMeterCore
-  )
+  ) 
 
 
   lazy val scalaMeterJs = Project(
