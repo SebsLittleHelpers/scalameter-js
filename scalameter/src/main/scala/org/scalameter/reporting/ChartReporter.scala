@@ -1,7 +1,7 @@
 package org.scalameter
 package reporting
 
-
+/* TODO:
 
 import java.awt.{BasicStroke, Color}
 import java.io._
@@ -424,3 +424,4 @@ object ChartReporter {
   }
 
 }
+*/

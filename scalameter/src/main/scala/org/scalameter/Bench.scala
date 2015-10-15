@@ -81,7 +81,7 @@ object Bench {
       measurer
     )
 
-    def persistor: Persistor = new persistence.GZIPJSONSerializationPersistor
+    def persistor: Persistor = Persistor.None // TODO : new persistence.GZIPJSONSerializationPersistor
   }
 
   @deprecated("Please use Bench.LocalTime instead", "0.7")
@@ -103,7 +103,7 @@ object Bench {
    */
   abstract class ForkedTime extends Forked[Double] {
     def aggregator: Aggregator[Double] = Aggregator.min
-    def measurer: Measurer[Double] = new Measurer.IgnoringGC
+    def measurer: Measurer[Double] = new Measurer.Default //TODO: IgnoringGC
       with Measurer.PeriodicReinstantiation[Double] {
       override val defaultFrequency = 12
       override val defaultFullGC = true
@@ -116,7 +116,7 @@ object Bench {
   abstract class HTMLReport extends Persisted[Double] {
     import reporting._
     def aggregator: Aggregator[Double] = Aggregator.average
-    def measurer: Measurer[Double] = new Measurer.IgnoringGC
+    def measurer: Measurer[Double] = new Measurer.Default //TODO: IgnoringGC
       with Measurer.PeriodicReinstantiation[Double]
       with Measurer.OutlierElimination[Double]
       with Measurer.RelativeNoise {
@@ -126,8 +126,8 @@ object Bench {
     def historian: RegressionReporter.Historian
     def online: Boolean
     def reporter: Reporter[Double] = Reporter.Composite(
-      new RegressionReporter(tester, historian),
-      HtmlReporter(!online)
+      new RegressionReporter(tester, historian)
+      // TODO : HtmlReporter(!online)
     )
   }
 
@@ -175,7 +175,7 @@ object Bench {
     import reporting._
     def warmer: Warmer = Warmer.Default()
     def aggregator: Aggregator[Double] = Aggregator.average
-    def measurer: Measurer[Double] = new Measurer.IgnoringGC
+    def measurer: Measurer[Double] = new Measurer.Default //TODO: IgnoringGC
       with Measurer.PeriodicReinstantiation[Double]
       with Measurer.OutlierElimination[Double]
       with Measurer.RelativeNoise {
@@ -186,8 +186,8 @@ object Bench {
     def reporter: Reporter[Double] = Reporter.Composite(
       new RegressionReporter(
         RegressionReporter.Tester.OverlapIntervals(),
-        RegressionReporter.Historian.ExponentialBackoff()),
-      HtmlReporter(false)
+        RegressionReporter.Historian.ExponentialBackoff())
+      // TODO : HtmlReporter(false)
     )
   }
 

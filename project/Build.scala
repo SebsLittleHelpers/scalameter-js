@@ -9,7 +9,8 @@ object ScalaMeterJsBuild extends Build {
 
   lazy val scalaMeterJsDependencies = Def.setting(Seq(
     "org.scala-js" %%% "scalajs-dom" % "0.8.2",
-    "com.lihaoyi" %%% "utest" % "0.3.0" % "test"))
+    "com.lihaoyi" %%% "utest" % "0.3.0" % "test"
+  ))
 
   lazy val scalaMeterJsSettings = Defaults.coreDefaultSettings ++ Seq(
     name := "scalameter-js",
@@ -19,8 +20,10 @@ object ScalaMeterJsBuild extends Build {
     persistLauncher in Compile := true,
     mainClass in Compile := Some("example.Main"),
     scalacOptions ++= compilerOptions,
+    maxErrors := 5,
     licenses += ("MIT", url("http://opensource.org/licenses/mit-license.php")),
-    libraryDependencies ++= scalaMeterJsDependencies.value)
+    libraryDependencies ++= scalaMeterJsDependencies.value
+  )
 
 
 
@@ -28,15 +31,22 @@ object ScalaMeterJsBuild extends Build {
     name := "scalameter-core",
     organization := "com.storm-enroute",
     scalaVersion := "2.11.7",
-    scalacOptions ++= compilerOptions
-//    libraryDependencies <++= (scalaVersion)(sv => coreDependencies(sv)),
-//    parallelExecution in Test := false,
-//    resolvers ++= Seq(
-//      "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots",
-//      "Sonatype OSS Releases" at "https://oss.sonatype.org/content/repositories/releases"
-//    ),
+    scalacOptions ++= compilerOptions,
+    maxErrors := 5
   )
 
+  lazy val scalaMeterDependencies = Def.setting(Seq(
+    "org.scala-js" % "scala-parser-combinators_sjs0.6_2.11" % "1.0.2"
+  ))
+
+  val scalaMeterSettings = Defaults.coreDefaultSettings ++ Seq(
+    name := "scalameter",
+    organization := "com.storm-enroute",
+    scalaVersion := "2.11.7",
+    scalacOptions ++= compilerOptions,
+    maxErrors := 5,
+    libraryDependencies ++= scalaMeterDependencies.value
+  )
 
 
   lazy val scalaMeterCore = Project(
@@ -45,10 +55,23 @@ object ScalaMeterJsBuild extends Build {
     settings = scalaMeterCoreSettings 
   )
 
+  lazy val scalaMeter = Project(
+    "scalameter",
+    file("scalameter"),
+    settings = scalaMeterSettings 
+  ) dependsOn (
+    scalaMeterCore
+  )
+
 
   lazy val scalaMeterJs = Project(
     id = "scalameter-js",
     base = file("."),
-    settings = scalaMeterJsSettings).enablePlugins(ScalaJSPlugin)
+    settings = scalaMeterJsSettings
+  ) enablePlugins (
+    ScalaJSPlugin
+  ) dependsOn (
+    scalaMeter
+  )
 } 
 

@@ -59,11 +59,11 @@ object api extends Keys {
 
   /* reporting */
 
-  type ChartReporter[T] = reporting.ChartReporter[T]
-  val ChartReporter = reporting.ChartReporter
+  // TODO : type ChartReporter[T] = reporting.ChartReporter[T]
+  // TODO : val ChartReporter = reporting.ChartReporter
 
-  type HtmlReporter[T] = reporting.HtmlReporter[T]
-  val HtmlReporter = reporting.HtmlReporter
+  // TODO : type HtmlReporter[T] = reporting.HtmlReporter[T]
+  // TODO : val HtmlReporter = reporting.HtmlReporter
 
   type LoggingReporter[T] = reporting.LoggingReporter[T]
   val LoggingReporter = reporting.LoggingReporter
@@ -76,30 +76,30 @@ object api extends Keys {
 
   val Tester = reporting.RegressionReporter.Tester
   val Historian = reporting.RegressionReporter.Historian
-  val ChartFactory = reporting.ChartReporter.ChartFactory
+  // TODO : val ChartFactory = reporting.ChartReporter.ChartFactory
 
   /* persistence */
 
   type SerializationPersistor = persistence.SerializationPersistor
   val SerializationPersistor = persistence.SerializationPersistor
 
-  type JSONSerializationPersistor = persistence.JSONSerializationPersistor
-  val JSONSerializationPersistor = persistence.JSONSerializationPersistor
+  // TODO : type JSONSerializationPersistor = persistence.JSONSerializationPersistor
+  // TODO : val JSONSerializationPersistor = persistence.JSONSerializationPersistor
 
-  type GZIPJSONSerializationPersistor = persistence.GZIPJSONSerializationPersistor
-  val GZIPJSONSerializationPersistor = persistence.GZIPJSONSerializationPersistor
+  // TODO : type GZIPJSONSerializationPersistor = persistence.GZIPJSONSerializationPersistor
+  // TODO : val GZIPJSONSerializationPersistor = persistence.GZIPJSONSerializationPersistor
 
   /* annotation based frontend */
 
-  type benchmark = japi.annotation.benchmark
-  type ctx = japi.annotation.ctx
-  type curve = japi.annotation.curve
-  type gen = japi.annotation.gen
-  type scopeCtx = japi.annotation.scopeCtx
-  type scopes = japi.annotation.scopes
-  type setup = japi.annotation.setup
-  type setupBeforeAll = japi.annotation.setupBeforeAll
-  type teardown = japi.annotation.teardown
-  type teardownAfterAll = japi.annotation.teardownAfterAll
-  type warmup = japi.annotation.warmup
+  // TODO : type benchmark = japi.annotation.benchmark
+  // TODO : type ctx = japi.annotation.ctx
+  // TODO : type curve = japi.annotation.curve
+  // TODO : type gen = japi.annotation.gen
+  // TODO : type scopeCtx = japi.annotation.scopeCtx
+  // TODO : type scopes = japi.annotation.scopes
+  // TODO : type setup = japi.annotation.setup
+  // TODO : type setupBeforeAll = japi.annotation.setupBeforeAll
+  // TODO : type teardown = japi.annotation.teardown
+  // TODO : type teardownAfterAll = japi.annotation.teardownAfterAll
+  // TODO : type warmup = japi.annotation.warmup
 }

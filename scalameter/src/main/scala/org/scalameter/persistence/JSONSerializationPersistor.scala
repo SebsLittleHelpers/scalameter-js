@@ -1,7 +1,7 @@
 package org.scalameter
 package persistence
 
-
+/*
 
 import java.io._
 import org.scalameter.Key.reports._
@@ -35,3 +35,4 @@ case class JSONSerializationPersistor(path: File)
 object JSONSerializationPersistor {
   def apply() = new JSONSerializationPersistor()
 }
+*/

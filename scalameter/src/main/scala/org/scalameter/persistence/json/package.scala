@@ -1,5 +1,5 @@
 package org.scalameter.persistence
-
+/* TODO:
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.scala.DefaultScalaModule
 import com.fasterxml.jackson.module.scala.experimental.ScalaObjectMapper
@@ -34,3 +34,4 @@ package object json {
     mapper
   }
 }
+*/

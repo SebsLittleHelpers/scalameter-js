@@ -1,6 +1,7 @@
 package org.scalameter
 package persistence.json
 
+/*
 import com.fasterxml.jackson.core.{JsonToken, JsonParser, JsonGenerator}
 import com.fasterxml.jackson.databind._
 import com.fasterxml.jackson.databind.deser.Deserializers
@@ -213,3 +214,4 @@ object ScalaMeterModule extends SimpleModule {
     super.setupModule(context)
   }
 }
+*/

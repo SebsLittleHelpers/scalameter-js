@@ -1,6 +1,6 @@
 package org.scalameter
 
-
+/* TODO:
 
 import org.scalatools.testing._
 
@@ -90,3 +90,5 @@ class ScalaMeterFramework extends Framework {
   }
 
 }
+*/
+

@@ -2,7 +2,7 @@ package org.scalameter
 package persistence
 
 
-
+/*
 import java.io._
 import java.util.zip._
 import org.scalameter.Key.reports._
@@ -38,3 +38,4 @@ case class GZIPJSONSerializationPersistor(path: File)
 object GZIPJSONSerializationPersistor {
   def apply() = new GZIPJSONSerializationPersistor()
 }
+*/
