@@ -1,5 +1,6 @@
 package org.scalameter.execution.invocation.instrumentation
 
+/* TODO:
 import org.objectweb.asm.{Type, ClassVisitor, MethodVisitor, Opcodes}
 import org.scalameter.execution.invocation.InvocationCountMatcher
 import scala.collection.mutable
@@ -46,3 +47,4 @@ private[instrumentation] class MethodInvocationCounterVisitor(cv: ClassVisitor, 
   /** Returns all matched methods. */
   def methods: Iterator[MethodSignature] = rawMethods.iterator
 }
+*/

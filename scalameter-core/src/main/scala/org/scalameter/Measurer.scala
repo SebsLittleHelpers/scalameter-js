@@ -2,8 +2,8 @@ package org.scalameter
 
 
 
-import org.scalameter.execution.invocation.InvocationCountMatcher
-import org.scalameter.utils.withGCNotification
+//TODO: import org.scalameter.execution.invocation.InvocationCountMatcher
+//TODO: import org.scalameter.utils.withGCNotification
 import scala.collection._
 import scala.compat._
 import scala.runtime.BoxesRunTime
@@ -143,6 +143,7 @@ object Measurer {
    *  To prevent looping forever, after the number of measurement failed due to GC exceeds the number of successful
    *  measurements by more than `M`, the subsequent measurements are accepted irregardless of whether GC cycles occur.
    */
+  /* TODO:
   class IgnoringGC extends Timer with IterationBasedValue {
     override def name = "Measurer.IgnoringGC"
 
@@ -188,7 +189,7 @@ object Measurer {
 
       times.result()
     }
-  }
+  }*/
 
   /** A mixin measurer which causes the value for the benchmark to be reinstantiated
    *  every `Key.exec.reinstantiation.frequency` measurements.
@@ -477,7 +478,7 @@ object Measurer {
 
   type Primitive = Boolean with Char with Byte
     with Short with Int with Long with Float with Double
-
+/* TODO:
   /** Counts autoboxed by a Scala compiler values.
    *
    *  @param primitives primitive types whose autoboxing will be counted.
@@ -524,7 +525,7 @@ object Measurer {
   case class MethodInvocationCount(matcher: InvocationCountMatcher) extends InvocationCount {
     def name: String = "Measurer.MethodInvocationCount"
   }
-
+*/
 }
 
 

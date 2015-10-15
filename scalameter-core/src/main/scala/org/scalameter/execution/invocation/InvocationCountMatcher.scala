@@ -1,5 +1,6 @@
 package org.scalameter.execution.invocation
 
+/* TODO:
 import java.lang.reflect.Method
 import java.util.regex.Pattern
 import org.objectweb.asm.Type
@@ -168,3 +169,4 @@ object InvocationCountMatcher {
   def forRegex(classRegex: Regex, methodRegex: Regex) =
     new InvocationCountMatcher(ClassMatcher.Regex(classRegex.pattern), MethodMatcher.Regex(methodRegex.pattern))
 }
+*/

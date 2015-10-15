@@ -4,7 +4,7 @@ package org.scalameter.utils
 
 import java.io.File
 import java.net._
-import org.apache.commons.lang3.SystemUtils
+//TODO: import org.apache.commons.lang3.SystemUtils
 
 
 
@@ -37,9 +37,9 @@ object ClassPath {
     val elem = location.getAbsolutePath
     require(!elem.contains(File.pathSeparatorChar),
       s"Classpath element contains illegal character: ${File.pathSeparatorChar}")
-    if (SystemUtils.IS_OS_WINDOWS) {
-      require(!elem.contains("\""), "Classpath element contains illegal character: \"")
-    }
+//TODO:    if (SystemUtils.IS_OS_WINDOWS) {
+//TODO:      require(!elem.contains("\""), "Classpath element contains illegal character: \"")
+//TODO:    }
   }
 
   private def fromString(classPath: String): ClassPath = {

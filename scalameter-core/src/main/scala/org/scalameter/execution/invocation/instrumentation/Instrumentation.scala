@@ -1,5 +1,6 @@
 package org.scalameter.execution.invocation.instrumentation
 
+/* TODO:
 import java.io._
 import java.util.jar.{Attributes, JarEntry, JarOutputStream}
 import java.util.zip.ZipFile
@@ -110,3 +111,4 @@ private[scalameter] object Instrumentation {
     lookupTable
   }
 }
+*/
