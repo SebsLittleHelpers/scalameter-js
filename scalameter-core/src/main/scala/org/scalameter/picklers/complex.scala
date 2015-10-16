@@ -1,6 +1,6 @@
 package org.scalameter.picklers
 
-import java.io.File
+import javajs.io.File
 import org.scalameter.utils.ClassPath
 
 

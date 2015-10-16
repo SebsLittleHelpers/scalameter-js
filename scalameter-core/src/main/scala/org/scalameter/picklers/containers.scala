@@ -4,7 +4,7 @@ package org.scalameter.picklers
 
 import language.higherKinds
 
-import java.util.Date
+import javajs.util.Date
 import org.scalameter.picklers.Implicits._
 import scala.annotation.tailrec
 import scala.collection.generic.CanBuildFrom

@@ -2,7 +2,7 @@ package org.scalameter
 
 
 
-import java.util.Date
+import javajs.util.Date
 import org.scalameter.picklers.Pickler
 import org.scalameter.utils.Tree
 import scala.language.existentials

@@ -48,6 +48,20 @@ object ScalaMeterJsBuild extends Build {
     libraryDependencies ++= scalaMeterDependencies.value
   )
 
+  val javajsSettings = Defaults.coreDefaultSettings ++ Seq(
+    name := "javajs",
+    scalaVersion := "2.11.7",
+    scalacOptions ++= compilerOptions,
+    maxErrors := 5
+  )
+
+  lazy val javajs = Project(
+    "javajs",
+    file("javajs"),
+    settings = javajsSettings 
+  ) enablePlugins (
+    ScalaJSPlugin
+  )
 
   lazy val scalaMeterCore = Project(
     "scalameter-core",
@@ -55,6 +69,8 @@ object ScalaMeterJsBuild extends Build {
     settings = scalaMeterCoreSettings 
   ) enablePlugins (
     ScalaJSPlugin
+  ) dependsOn (
+    javajs
   )
 
   lazy val scalaMeter = Project(

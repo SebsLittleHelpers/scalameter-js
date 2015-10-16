@@ -2,11 +2,9 @@ package org.scalameter.utils
 
 
 
-import java.io.File
-import java.net._
+import javajs.io.File
+import javajs.net._
 //TODO: import org.apache.commons.lang3.SystemUtils
-
-
 
 class ClassPath private (val paths: Seq[File]) extends Serializable {
   /** Returns platform dependent classpath string.
@@ -67,8 +65,8 @@ object ClassPath {
     classLoader match {
       case urlclassloader: URLClassLoader =>
         ClassPath(extractFileClasspaths(urlclassloader.getURLs))
-      case null =>
-        fromString(sys.props("sun.boot.class.path"))
+      /*case null =>
+        fromString(sys.props("sun.boot.class.path"))*/
       case _ =>
         val parent = classLoader.getParent
         if (parent != null)
@@ -78,9 +76,10 @@ object ClassPath {
     }
 
   private[scalameter] def extractFileClasspaths(urls: Seq[URL]): Seq[File] = {
-    val fileResource = "file:(.*)".r
+    /*val fileResource = "file:(.*)".r
     urls.map(s => URLDecoder.decode(s.toString, "UTF-8")) collect {
       case orig @ fileResource(file) => new File(file)
-    }
+    }*/
+    Seq.empty
   }
 }

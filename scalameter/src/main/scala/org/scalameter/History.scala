@@ -1,6 +1,6 @@
 package org.scalameter
 
-import java.util.Date
+import javajs.util.Date
 
 @SerialVersionUID(-2666789428423525667L)
 case class History[V](results: Seq[History.Entry[V]], infomap: Map[Key[_], Any] = Map.empty) {

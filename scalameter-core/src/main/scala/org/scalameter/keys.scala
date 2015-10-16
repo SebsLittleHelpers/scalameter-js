@@ -2,8 +2,8 @@ package org.scalameter
 
 
 
-import java.io.File
-import java.util.Date
+import javajs.io.File
+import javajs.util.Date
 import org.scalameter.execution.invocation.instrumentation.MethodSignature
 import org.scalameter.picklers.Implicits._
 import org.scalameter.picklers.Pickler
