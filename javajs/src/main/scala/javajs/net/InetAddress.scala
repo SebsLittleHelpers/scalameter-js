@@ -1,9 +1,9 @@
 package javajs.net
 
 class InetAddress {
-  def getHostName: String = ???
+  def getHostName: String = "hostname"
 }
 
 object InetAddress {
-  def getLocalHost: InetAddress = ???
+  def getLocalHost: InetAddress = new InetAddress()
 }

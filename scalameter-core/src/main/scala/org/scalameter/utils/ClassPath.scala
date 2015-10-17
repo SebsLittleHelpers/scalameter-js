@@ -54,7 +54,7 @@ object ClassPath {
   /** Returns the default classpath string.
    */
   def default: ClassPath = {
-    extract(this.getClass.getClassLoader, sys.props("java.class.path"))
+    extract(this.getClass.getClassLoader, ""/*sys.props("java.class.path")*/)
   }
 
   /** Extracts the classpath from the given `classLoader` if it is a `URLClassLoader` or

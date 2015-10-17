@@ -7,7 +7,7 @@ object File {
 }
 
 class File(path : String) {
-  def getAbsolutePath : String = ???
+  def getAbsolutePath : String = path
   def exists : Boolean = ???
   def isFile : Boolean = ???
   

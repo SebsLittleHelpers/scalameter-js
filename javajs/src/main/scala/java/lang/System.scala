@@ -8,9 +8,9 @@ import scala.scalajs.runtime.assumingES6
 
 object System {
   
-  def getProperty(key: String) : String = ???
-  def setProperty(key: String, value : String) : String = ???
-  def getProperties() : java.util.Properties = ???
+  def getProperty(key: String) : String = ""
+  def setProperty(key: String, value : String) : String = ""
+  def getProperties() : java.util.Properties = new java.util.Properties()
 
   //////////
   var out: PrintStream = new JSConsoleBasedPrintStream(isErr = false)

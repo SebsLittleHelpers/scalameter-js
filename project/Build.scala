@@ -5,54 +5,45 @@ import Keys._
 
 object ScalaMeterJsBuild extends Build {
 
-  val compilerOptions = Seq("-deprecation", "-unchecked", "-feature", "-Xlint", "-Xfatal-warnings")
+  lazy val commonSettings = Defaults.coreDefaultSettings ++ Seq( 
+    scalaVersion := "2.11.7",
+    scalacOptions ++= Seq("-deprecation", "-unchecked", "-feature", "-Xlint", "-Xfatal-warnings"),
+    maxErrors := 5,
+    scalaJSOptimizerOptions ~= { _.withDisableOptimizer(true) }
+  )
 
   lazy val scalaMeterJsDependencies = Def.setting(Seq(
     "org.scala-js" %%% "scalajs-dom" % "0.8.2",
     "com.lihaoyi" %%% "utest" % "0.3.0" % "test"
   ))
 
-  lazy val scalaMeterJsSettings = Defaults.coreDefaultSettings ++ Seq(
+  lazy val scalaMeterJsSettings = commonSettings ++ Seq(
     name := "scalameter-js",
     normalizedName := "scalameter-js",
-    scalaVersion := "2.11.7",
     version := "0.0.1-SNAPSHOT",
     persistLauncher in Compile := true,
     mainClass in Compile := Some("example.Main"),
-    scalacOptions ++= compilerOptions,
-    maxErrors := 5,
     licenses += ("MIT", url("http://opensource.org/licenses/mit-license.php")),
     libraryDependencies ++= scalaMeterJsDependencies.value
   )
 
-
-
-  val scalaMeterCoreSettings = Defaults.coreDefaultSettings ++ Seq(
+  val scalaMeterCoreSettings = commonSettings ++ Seq(
     name := "scalameter-core",
-    organization := "com.storm-enroute",
-    scalaVersion := "2.11.7",
-    scalacOptions ++= compilerOptions,
-    maxErrors := 5
+    organization := "com.storm-enroute"
   )
 
   lazy val scalaMeterDependencies = Def.setting(Seq(
     "org.scala-js" % "scala-parser-combinators_sjs0.6_2.11" % "1.0.2"
   ))
 
-  val scalaMeterSettings = Defaults.coreDefaultSettings ++ Seq(
+  val scalaMeterSettings = commonSettings ++ Seq(
     name := "scalameter",
     organization := "com.storm-enroute",
-    scalaVersion := "2.11.7",
-    scalacOptions ++= compilerOptions,
-    maxErrors := 5,
     libraryDependencies ++= scalaMeterDependencies.value
   )
 
-  val javajsSettings = Defaults.coreDefaultSettings ++ Seq(
-    name := "javajs",
-    scalaVersion := "2.11.7",
-    scalacOptions ++= compilerOptions,
-    maxErrors := 5
+  val javajsSettings = commonSettings ++ Seq(
+    name := "javajs"
   )
 
   lazy val javajs = Project(

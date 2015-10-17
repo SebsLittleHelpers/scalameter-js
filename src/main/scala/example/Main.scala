@@ -3,6 +3,7 @@ package example
 import scala.scalajs.js
 import org.scalajs.dom
 import org.scalameter.api._
+import org.scalameter.picklers.noPickler._
 
 /**
  * @author dengels
@@ -30,6 +31,8 @@ object Main extends js.JSApp {
         }
     
     override def reporter = Reporter.None
+    override def executor = LocalExecutor(warmer, aggregator, measurer)
+    override def persistor = Persistor.None
   }
 
   def main: Unit = {

@@ -181,7 +181,7 @@ object Bench {
       with Measurer.RelativeNoise {
       def numeric: Numeric[Double] = implicitly[Numeric[Double]]
     }
-    def executor: Executor[Double] = Executor.None
+    def executor: Executor[Double] = execution.LocalExecutor(warmer, aggregator, measurer)
       // TODO : new execution.SeparateJvmsExecutor(warmer, aggregator, measurer)
     def reporter: Reporter[Double] = Reporter.Composite(
       new RegressionReporter(

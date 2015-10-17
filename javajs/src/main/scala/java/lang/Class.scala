@@ -21,7 +21,9 @@ private trait ScalaJSClassData[A] extends js.Object {
 
 final class Class[A] private (data: ScalaJSClassData[A]) extends Object {
 
-  def getClassLoader : ClassLoader = ???
+  def getClassLoader : ClassLoader = new ClassLoader {
+      //override def getParent : ClassLoader = ???
+  }
   
   /////////////////////////////
   
