@@ -73,7 +73,7 @@ object Context {
     Key.machine.osName -> sys.props("os.name"),
     Key.machine.osArch -> sys.props("os.arch"),
     Key.machine.cores -> Runtime.getRuntime.availableProcessors,
-    Key.machine.hostname -> java.net.InetAddress.getLocalHost.getHostName
+    Key.machine.hostname -> javajs.net.InetAddress.getLocalHost.getHostName
   )
 
   @deprecated(
