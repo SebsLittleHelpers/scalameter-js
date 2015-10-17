@@ -35,5 +35,8 @@ object Main extends js.JSApp {
   def main: Unit = {
     println("Hello World")
     RangeBenchmark.main(Array())
+    for(i <- 1 to 100){
+      println(System.nanoTime()-System.nanoTime())
+    }
   }
 }
