@@ -6,10 +6,7 @@ import language.implicitConversions
 
 import collection._
 import math._
-//TODO: import org.apache.commons.math3.distribution.TDistribution
-//TODO: import org.apache.commons.math3.distribution.NormalDistribution
-//TODO: import org.apache.commons.math3.distribution.FDistribution
-
+import scala.scalajs.js
 
 
 /** Standard statistics utilities.
@@ -186,19 +183,19 @@ object Statistics {
 	 *  the 0.5-th quantile is called the median of F.
 	 */
 	private def qt(p: Double, df: Double): Double = {
-		0.5 //TODO: new TDistribution(df).inverseCumulativeProbability(p)
-	}
+    js.Dynamic.global.jStat.studentt.inv(p, df).asInstanceOf[Double]
+  }
 
 	/** Quantile function for the standard (μ = 0, σ = 1) normal distribution.
 	 */
 	private def qsnorm(p: Double): Double = {
-		0.5 //TODO: new NormalDistribution().inverseCumulativeProbability(p)
+		js.Dynamic.global.jStat.normal.inv(p, 0, 1).asInstanceOf[Double]
 	}
 
 	/** Quantile function for the F distribution.
 	 */
 	private def qf(p: Double, df1: Double, df2: Double) = {
-		0.5 //TODO: new FDistribution(df1, df2).inverseCumulativeProbability(p)
+    js.Dynamic.global.jStat.centralF.inv(p, df1, df2).asInstanceOf[Double]
 	}
 
 }

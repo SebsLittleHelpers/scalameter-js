@@ -29,7 +29,9 @@ object ScalaMeterJsBuild extends Build {
 
   val scalaMeterCoreSettings = commonSettings ++ Seq(
     name := "scalameter-core",
-    organization := "com.storm-enroute"
+    organization := "com.storm-enroute",
+    jsDependencies += "org.webjars.bower" % "jstat" % "1.3.0" / "jstat.js" minified "jstat.min.js",
+    skip in packageJSDependencies := false
   )
 
   lazy val scalaMeterDependencies = Def.setting(Seq(
