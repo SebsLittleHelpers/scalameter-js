@@ -2,7 +2,7 @@ package org.scalameter
 package persistence
 
 
-
+/*
 import java.io._
 import org.scalameter.Key.reports._
 
@@ -41,3 +41,4 @@ object SerializationPersistor {
 
 }
 
+*/

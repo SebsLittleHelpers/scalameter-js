@@ -2,7 +2,7 @@ package org.scalameter
 package persistence
 
 
-
+/*
 import java.io._
 
 
@@ -52,3 +52,4 @@ trait IOStreamPersistor[I <: InputStream, O <: OutputStream] extends Persistor {
     }
   }
 }
+*/

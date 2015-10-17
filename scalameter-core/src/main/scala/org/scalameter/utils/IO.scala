@@ -1,6 +1,6 @@
 package org.scalameter.utils
 
-import java.io.{File, FileInputStream, ByteArrayOutputStream, InputStream}
+import javajs.io.{File, FileInputStream, ByteArrayOutputStream, InputStream}
 import scala.annotation.tailrec
 
 

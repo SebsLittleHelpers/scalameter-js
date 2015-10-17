@@ -1,6 +1,6 @@
 package org.scalameter.execution
 
-import java.io._
+import javajs.io._
 
 class Main
 

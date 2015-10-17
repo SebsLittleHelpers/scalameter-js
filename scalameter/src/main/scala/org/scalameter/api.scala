@@ -80,8 +80,8 @@ object api extends Keys {
 
   /* persistence */
 
-  type SerializationPersistor = persistence.SerializationPersistor
-  val SerializationPersistor = persistence.SerializationPersistor
+  // TODO : type SerializationPersistor = persistence.SerializationPersistor
+  // TODO : val SerializationPersistor = persistence.SerializationPersistor
 
   // TODO : type JSONSerializationPersistor = persistence.JSONSerializationPersistor
   // TODO : val JSONSerializationPersistor = persistence.JSONSerializationPersistor
