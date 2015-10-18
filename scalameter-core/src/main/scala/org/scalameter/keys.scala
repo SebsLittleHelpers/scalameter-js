@@ -105,14 +105,14 @@ class Keys extends KeyContainer("", null) {
   // due to initialization order issue with object Key
 
   val verbose = apply[Boolean]("verbose", true)
-  val classpath = apply[ClassPath]("classpath", ClassPath.default)
+  //val classpath = apply[ClassPath]("classpath", ClassPath.default)
   val preJDK7 = apply[Boolean]("preJDK7", false)
   val scopeFilter = apply[String]("scopeFilter", "")
 
-  private[scalameter] val finalClasspath =
-    new KeyWithDefaultKey[ClassPath]("finalClasspath", classpath) {
-      override def isTransient: Boolean = true
-    }
+  // private[scalameter] val finalClasspath =
+  //   new KeyWithDefaultKey[ClassPath]("finalClasspath", classpath) {
+  //     override def isTransient: Boolean = true
+  //   }
 
   object dsl extends KeyContainer("dsl", Keys.this) {
     val curve = apply[String]("curve", "")

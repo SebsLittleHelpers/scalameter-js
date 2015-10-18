@@ -46,6 +46,7 @@ object Context {
   def apply(xs: KeyValue*) = new Context(xs.asInstanceOf[Seq[(Key[_], Any)]].toMap)
 
   val empty = new Context(immutable.Map.empty)
+  val number = 18;
 
   val topLevel = machine ++ Context(
     preJDK7 -> false,
@@ -54,7 +55,7 @@ object Context {
     exec.minWarmupRuns -> 10,
     exec.maxWarmupRuns -> 50,
     exec.jvmflags -> List("-Xmx2048m", "-Xms2048m", "-XX:CompileThreshold=100"),
-    classpath -> utils.ClassPath.default,
+    //classpath -> number,//utils.ClassPath.default,
     reports.regression.significance -> 1e-10
   )
 
