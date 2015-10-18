@@ -5,7 +5,7 @@ import scala.annotation.tailrec
 
 
 object IO {
-  /** Reads all bytes from given [[java.io.InputStream]].
+  /** Reads all bytes from given java.io.InputStream.
    *
    *  Note that this method does not close supplied stream.
    */
@@ -26,7 +26,7 @@ object IO {
     output.toByteArray
   }
 
-  /** Reads all bytes from given [[java.io.File]]. */
+  /** Reads all bytes from given java.io.File. */
   def readFromFile(from: File, chunkSize: Int = 2048): Array[Byte] = {
     val fis = new FileInputStream(from)
     val bytes = readFromInputStream(fis, chunkSize)

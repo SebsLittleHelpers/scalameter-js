@@ -347,7 +347,7 @@ object Measurer {
    *  for tests requiring artificial noise.
    *  The resulting value is clamped into the range `x - magnitude, x + magnitude`.
    *  
-   *  $noise
+   *  noise
    */
   trait AbsoluteNoise extends Noise {
 
@@ -370,7 +370,7 @@ object Measurer {
    *
    *  The bottomline is - a `1.0` noise magnitude is a variation of `10%` of the mean.
    *
-   *  $noise
+   *  noise
    */
   trait RelativeNoise extends Noise {
 

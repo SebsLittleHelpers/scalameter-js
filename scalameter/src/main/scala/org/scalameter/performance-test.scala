@@ -12,7 +12,7 @@ import scala.util.DynamicVariable
 
 
 
-/** Abstract required for the [[org.scalameter.ScalaMeterFramework]] to find all
+/** Abstract required for the org.scalameter.ScalaMeterFramework to find all
  *  performance tests.
  */
 sealed trait AbstractPerformanceTest {

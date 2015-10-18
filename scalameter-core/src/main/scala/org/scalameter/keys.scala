@@ -42,18 +42,18 @@ extends PicklerBasedKey[T] {
 /** Base for keys that have some kind of default value. */
 class KeyWithDefault[T: Pickler](name: String)(implicit container: KeyContainer) extends Key[T](name)
 
-/** Key that defaults to [[default]] if value under key is not found in a context.
+/** Key that defaults to default if value under key is not found in a context.
  *
- *  Note that this key type is handled in [[org.scalameter.Context.apply)]].
+ *  Note that this key type is handled in org.scalameter.Context.apply).
  */
 class KeyWithDefaultValue[T: Pickler](name: String, val default: T)
   (implicit container: KeyContainer)
 extends KeyWithDefault[T](name)
 
-/** Key that chains finding default value to [[KeyWithDefaultValue]]
+/** Key that chains finding default value to KeyWithDefaultValue
  *  if value under key is not found in a context.
  * 
- *  Note that this key type is handled in [[org.scalameter.Context.apply)]].
+ *  Note that this key type is handled in org.scalameter.Context.apply).
  */
 class KeyWithDefaultKey[T: Pickler](name: String, val default: KeyWithDefaultValue[T])
   (implicit container: KeyContainer)

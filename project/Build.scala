@@ -20,6 +20,7 @@ object ScalaMeterJsBuild extends Build {
   lazy val scalaMeterJsSettings = commonSettings ++ Seq(
     name := "scalameter-js",
     normalizedName := "scalameter-js",
+    organization := "org.sebs.little.helpers",
     version := "0.0.1-SNAPSHOT",
     persistLauncher in Compile := true,
     mainClass in Compile := Some("example.Main"),
