@@ -11,3 +11,14 @@
 ```
 
 Currently this naive implementations only gather running time on chrome browser launched with the `--enable-benchmarking`
+
+# Usage
+For the three projects (javajs, scalameter, scalameter-core) do:
+```
+> publishLocal
+```
+
+and then add this line in the build.sbt of the project where you want to use it:
+```
+libraryDependencies += "com.storm-enroute" %%% "scalameter" % "0.1-SNAPSHOT"
+```
