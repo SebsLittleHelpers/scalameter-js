@@ -8,8 +8,7 @@ object ScalaMeterJsBuild extends Build {
   lazy val commonSettings = Defaults.coreDefaultSettings ++ Seq( 
     scalaVersion := "2.11.7",
     scalacOptions ++= Seq("-deprecation", "-unchecked", "-feature", "-Xlint", "-Xfatal-warnings"),
-    maxErrors := 5,
-    scalaJSOptimizerOptions ~= { _.withDisableOptimizer(true) }
+    maxErrors := 5
   )
 
   lazy val scalaMeterJsDependencies = Def.setting(Seq(
@@ -45,14 +44,14 @@ object ScalaMeterJsBuild extends Build {
     libraryDependencies ++= scalaMeterDependencies.value
   )
 
-  val javajsSettings = commonSettings ++ Seq(
-    name := "javajs"
+  val javalibSettings = commonSettings ++ Seq(
+    name := "javalib"
   )
 
-  lazy val javajs = Project(
-    "javajs",
-    file("javajs"),
-    settings = javajsSettings 
+  lazy val javalib = Project(
+    "javalib",
+    file("javalib"),
+    settings = javalibSettings 
   ) enablePlugins (
     ScalaJSPlugin
   )
@@ -64,7 +63,7 @@ object ScalaMeterJsBuild extends Build {
   ) enablePlugins (
     ScalaJSPlugin
   ) dependsOn (
-    javajs
+    javalib
   )
 
   lazy val scalaMeter = Project(
@@ -75,7 +74,7 @@ object ScalaMeterJsBuild extends Build {
     ScalaJSPlugin
   ) dependsOn (
     scalaMeterCore
-  ) 
+  ) aggregate ( scalaMeterCore, javalib ) 
 
 
   lazy val scalaMeterJs = Project(
