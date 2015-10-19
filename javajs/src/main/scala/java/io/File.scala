@@ -1,4 +1,4 @@
-package javajs.io
+package java.io
 
 object File {
   val pathSeparator  = "/"

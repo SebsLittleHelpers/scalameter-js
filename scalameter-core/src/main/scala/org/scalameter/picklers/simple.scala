@@ -1,7 +1,7 @@
 package org.scalameter.picklers
 
-import javajs.nio.ByteBuffer
-import javajs.util.Date
+import java.nio.ByteBuffer
+import java.util.Date
 
 
 object StringPickler extends Pickler[String] {

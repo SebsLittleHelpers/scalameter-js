@@ -1,6 +1,6 @@
 package org.scalameter.picklers
 
-import javajs.nio.ByteBuffer
+import java.nio.ByteBuffer
 
 
 abstract class PrimitivePickler[T] extends Pickler[T] {

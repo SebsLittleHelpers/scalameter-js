@@ -2,8 +2,8 @@ package org.scalameter.utils
 
 
 
-import javajs.io.File
-import javajs.net._
+import java.io.File
+import java.net._
 //TODO: import org.apache.commons.lang3.SystemUtils
 
 class ClassPath private (val paths: Seq[File]) extends Serializable {

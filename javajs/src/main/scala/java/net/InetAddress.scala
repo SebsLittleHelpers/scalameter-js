@@ -1,4 +1,4 @@
-package javajs.net
+package java.net
 
 class InetAddress {
   def getHostName: String = "hostname"

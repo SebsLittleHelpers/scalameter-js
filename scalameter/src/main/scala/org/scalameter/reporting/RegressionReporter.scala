@@ -3,7 +3,7 @@ package reporting
 
 
 
-import javajs.util.Date
+import java.util.Date
 import scala.collection._
 import scala.Numeric.Implicits._
 import org.scalameter.utils.Tree
