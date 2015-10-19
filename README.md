@@ -13,8 +13,8 @@
 Currently this naive implementations only gather running time on chrome browser launched with the `--enable-benchmarking`
 
 # Usage
-For the three projects (javajs, scalameter, scalameter-core) do:
 ```
+> project scalameter
 > publishLocal
 ```
 
