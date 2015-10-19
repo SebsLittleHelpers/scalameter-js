@@ -76,10 +76,10 @@ object ClassPath {
     }
 
   private[scalameter] def extractFileClasspaths(urls: Seq[URL]): Seq[File] = {
-    /*val fileResource = "file:(.*)".r
+    val fileResource = "file:(.*)".r
     urls.map(s => URLDecoder.decode(s.toString, "UTF-8")) collect {
       case orig @ fileResource(file) => new File(file)
-    }*/
+    }
     Seq.empty
   }
 }
